@@ -33,10 +33,10 @@ char hexaKeys[ROWS][COLS] = {
 
 //Пины подключения строк клавиатуры
 //на 1 пин подключит Arduino Uno не удалось, пришлось использовать 8
-byte rowPins[ROWS] = {0, 8, 2, 3};
+byte rowPins[ROWS] = {A0, A1, A2, A3};
 
 //Пины подключения столбцов клавиатуры 
-byte colPins[COLS] = {4, 5, 6, 7};
+byte colPins[COLS] = {5, 4, 3, 2};
 
 //Инициализация клавиатуры
 Keypad customKeypad = Keypad( makeKeymap(hexaKeys), rowPins, colPins, ROWS, COLS); 
@@ -154,4 +154,3 @@ void loop(){
     Serial.println("(Val1=" + String(sVal1) + ")" + cSign + "(Val2=" + String(sVal2) + ")" + "=" + String(fResult));
   }
 }
-
